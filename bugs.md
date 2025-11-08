@@ -23,4 +23,4 @@ Consistência: Sempre acontece.
 Resultado Esperado: 1 + 2 = 3
 Resultado Obtido: 1 + 2 = 4
 
-![alt text](Imagens\bug_adicao.png)
+![alt text](Imagens/bug_adicao.png)
