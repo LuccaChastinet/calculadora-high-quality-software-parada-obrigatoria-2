@@ -78,19 +78,19 @@ Resultado Obtido: 0
 
 Evidência:
 
-
+![alt text](Imagens/bug_fatorial.png)
 
 Severidade: Alto
 Impacto: O cálculo fatorial é inutilizável.
 
 Trecho de código:
-
+```python
 def fatorial(x):
     fat = 1
     for i in range(x+1):
         fat *= i
     return fat
-
+```
 
 Data: 08/11/2025
 Status: Não Resolvido
@@ -119,18 +119,199 @@ Resultado Obtido: AttributeError
 
 Evidência:
 
-
+![alt text](Imagens/bug_logaritmo_natural.png)
 
 Severidade: Alto
 Impacto: Função quebra o programa e não executa.
 
 Trecho de código:
-
+```python
 def logaritmo_natural(x):
     if x <= 0:
         return "Erro: Logaritmo de número não positivo"
     return np.ln(x)
+```
 
+Data: 08/11/2025
+Status: Não Resolvido
+
+## 4 - Função "logaritmo_base10" chama o logaritmo errado
+
+Localização: Linha 34 de Calculadora.py
+
+Descrição:
+A função utiliza np.log(x) (logaritmo natural) em vez de np.log10(x).
+
+Contexto: Python 3.12.4 | Comando: python Calculadora.py
+
+Passos para reproduzir:
+
+Executar python Calculadora.py
+
+Selecionar opção 9
+
+Inserir 100
+
+Resultado: 4.605170185988092
+
+Resultado Esperado: log10(100) = 2
+Resultado Obtido: loge(100) ≈ 4.60517
+
+Evidência:
+
+![alt text](Imagens/bug_logaritmo_base10.png)
+
+Severidade: Médio
+Impacto: Resultado incorreto em cálculos com base 10.
+
+Trecho de código:
+```python
+def logaritmo_base10(x):
+    if x < 0:
+        return "Erro: Logaritmo de número não positivo"
+    return np.log(x)
+```
+
+Data: 08/11/2025
+Status: Não Resolvido
+
+## 5 - Funções trigonométricas não implementadas
+
+Localização: Linhas 46 a 64 de Calculadora.py
+
+Descrição:
+As funções cosseno(x) e tangente(x) são chamadas, mas não existem no código. O programa gera erro NameError.
+
+Contexto: Python 3.12.4 | Comando: python Calculadora.py
+
+Passos para reproduzir:
+
+Executar python Calculadora.py
+
+Selecionar opção 11
+
+Inserir 45
+
+Resultado: NameError: name 'cosseno' is not defined
+
+Resultado Esperado: cos(45°) ≈ 0.7071
+Resultado Obtido: NameError
+
+Evidência:
+
+![alt text](Imagens/bug_coss_tang.png)
+
+Severidade: Alto
+Impacto: As operações trigonométricas listadas no menu não funcionam.
+
+Trecho de código:
+```python
+elif escolha == '11':
+    x = float(input("Digite o ângulo em graus: "))
+    print("Resultado:", cosseno(x))
+```
+
+Data: 08/11/2025
+Status: Não Resolvido
+
+## 6 - Opção "10" (Seno) aparece no menu mas não funciona
+
+Localização: Linha 46 de Calculadora.py
+
+Descrição:
+O menu exibe a opção “10. Seno”, mas não há implementação correspondente. O programa retorna “Operação inválida”.
+
+Contexto: Python 3.12.4 | Comando: python Calculadora.py
+
+Passos para reproduzir:
+
+Executar python Calculadora.py
+
+Selecionar opção 10
+
+Resultado: “Operação inválida. Tente novamente.”
+
+Resultado Esperado: sin(x)
+Resultado Obtido: “Operação inválida”
+
+Evidência:
+
+![alt text](Imagens/bug_seno.png)
+
+Severidade: Médio
+Impacto: Função anunciada mas inexistente.
+
+Data: 08/11/2025
+Status: Não Resolvido
+
+## 7 - Falta de tratamento para divisão por zero
+
+Localização: Linha 13 de Calculadora.py
+
+Descrição:
+A função divisao não trata divisões por zero, gerando ZeroDivisionError.
+
+Contexto: Python 3.12.4 | Comando: python Calculadora.py
+
+Passos para reproduzir:
+
+Executar python Calculadora.py
+
+Selecionar opção 4
+
+Inserir 10
+
+Inserir 0
+
+Resultado: ZeroDivisionError: float division by zero
+
+Resultado Esperado: Mensagem “Erro: Divisão por zero”
+Resultado Obtido: Exceção ZeroDivisionError
+
+Evidência:
+
+![alt text](Imagens/bug_divisao_zero.png)
+
+Severidade: Alto
+Impacto: Quebra total da execução do programa.
+
+Trecho de código:
+```python
+def divisao(x, y):
+    return x / y
+```
+
+Data: 08/11/2025
+Status: Não Resolvido
+
+## 8 - Mensagem de erro incorreta em logaritmo_base10
+
+Localização: Linha 33 de Calculadora.py
+
+Descrição:
+A função usa if x < 0, permitindo logaritmo de 0, o que resulta em -inf ao invés de uma mensagem de erro.
+
+Contexto: Python 3.12.4 | Comando: python Calculadora.py
+
+Passos para reproduzir:
+
+Executar python Calculadora.py
+
+Selecionar opção 9
+
+Inserir 0
+
+Resultado: -inf
+
+Resultado Esperado: Mensagem “Erro: Logaritmo de número não positivo”
+Resultado Obtido: -inf
+
+Evidência:
+
+![alt text](Imagens/bug_erro_logaritmo_base10.png)
+
+Severidade: Baixo
+Impacto: Inconsistência no tratamento de erros matemáticos.
 
 Data: 08/11/2025
 Status: Não Resolvido
