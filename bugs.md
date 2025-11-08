@@ -52,7 +52,7 @@ def adicao(x, y):
 
 Data: 08/11/2025
 
-Status: Não Resolvido
+Status: Resolvido
 
 ## 2 - Função "fatorial" retornando 0 para qualquer número
 
@@ -93,7 +93,7 @@ def fatorial(x):
 ```
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
 
 ## 3 - Função "logaritmo_natural" usa método inexistente np.ln
 
@@ -133,7 +133,7 @@ def logaritmo_natural(x):
 ```
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
 
 ## 4 - Função "logaritmo_base10" chama o logaritmo errado
 
@@ -173,7 +173,7 @@ def logaritmo_base10(x):
 ```
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
 
 ## 5 - Funções trigonométricas não implementadas
 
@@ -212,7 +212,7 @@ elif escolha == '11':
 ```
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
 
 ## 6 - Opção "10" (Seno) aparece no menu mas não funciona
 
@@ -242,7 +242,7 @@ Severidade: Médio
 Impacto: Função anunciada mas inexistente.
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
 
 ## 7 - Falta de tratamento para divisão por zero
 
@@ -282,7 +282,7 @@ def divisao(x, y):
 ```
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
 
 ## 8 - Mensagem de erro incorreta em logaritmo_base10
 
@@ -314,4 +314,4 @@ Severidade: Baixo
 Impacto: Inconsistência no tratamento de erros matemáticos.
 
 Data: 08/11/2025
-Status: Não Resolvido
+Status: Resolvido
